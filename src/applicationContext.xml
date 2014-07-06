@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- init-method="initialize" scope="prototype" -->
+	<bean id="address" class="com.ems.domain.Address" scope="prototype"></bean>
+	<bean id="department" class="com.ems.domain.Department" scope="prototype"></bean>
+	<bean id="employee" class="com.ems.domain.Employee" scope="prototype">
+		<property name="department" ref="department" />
+		<property name="address" ref="address" />
+	</bean>
+
+	<bean id="addressDao" class="com.ems.dao.AddressDaoImpl"></bean>
+	<bean id="departmentDao" class="com.ems.dao.DepartmentDaoImpl"></bean>
+	<bean id="employeeDao" class="com.ems.dao.EmployeeDaoImpl"></bean>
+
+	<bean id="addressService" class="com.ems.service.AddressService"></bean>
+	<bean id="departmentService" class="com.ems.service.DepartmentService"></bean>
+	<bean id="employeeService" class="com.ems.service.EmployeeService" init-method="initialize">
+		<property name="addressDao" ref="addressDao" />
+		<property name="empDao" ref="employeeDao" />
+	</bean>
+
+</beans>

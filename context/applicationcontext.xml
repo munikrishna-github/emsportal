@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="addressDaoImpl" class="com.ems.dao.AddressDaoImpl">
+<property name="type" value="addressDaoImpl" />
+</bean>
+<bean id="connectionManager" class="com.ems.dao.ConnectionManager">
+<property name="type" value="connectionManager" />
+</bean>
+<bean id="departmentDaoImpl" class="com.ems.dao.DepartmentDaoImpl">
+<property name="type" value="departmentDaoImpl" />
+</bean>
+<bean id="employeeDaoImpl" class="com.ems.dao.EmployeeDaoImpl">
+<property name="type" value="employeeDaoImpl" />
+</bean>
+<bean id="address" class="com.ems.damain.Address">
+<property name="type" value="address" />
+</bean>
+<bean id="department" class="com.ems.damain.Department">
+<property name="type" value="department" />
+</bean>
+<bean id="employee" class="com.ems.dao.Employee">
+<property name="type" value="employee" />
+</bean>
+<bean id="addressService" class="com.ems.service.AddressService">
+<property name="type" value="addressService" />
+</bean>
+<bean id="departmentService" class="com.ems.service.DepartmentService">
+<property name="type" value="departmentService" />
+</bean>
+<bean id="employeeService" class="com.ems.service.EmployeeService">
+<property name="type" value="employeeService" />
+</bean>
+<bean id="DepartmentServlet" class="com.ems.servlet.DepartmentServlet">
+<property name="type" value="DepartmentServlet" />
+</bean>
+<bean id="employeeServlet" class="com.ems.servlet.EmployeeServlet">
+<property name="type" value="employeeServlet" />
+</bean>
+</beans>
